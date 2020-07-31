@@ -1,0 +1,61 @@
+1. membuat database dengan nama myshop.
+=> jawaban : create database myshop;
+
+2. membuat tabel ke dalam database myshop.
+=> membuat tabel users
+	- create table users (
+		*id int primary key auto_increment,
+		*name varchar(255),
+		*email varchar(255),
+		*password varchar(255)
+		*);
+
+=> membuat tabel items 
+	- create table items (
+		*id int primary key auto_increment,
+		*name varchar(255),
+		*description varchar(255),
+		*price int,
+		*stock int,
+		*category_id int,
+		*foreign key(category_id) references categories(id)
+		*);
+
+=> membuat tabel categories
+	- create table categories (
+		*id int primary key auto_increment,
+		*name varchar(255)
+		*);
+
+3. memasukkan data ke tabel
+=> memasukkan ke tabel users
+	- insert into users values('','John Doe','john@doe.com','john123');
+	- insert into users values('','Jane Does','jane@done.com','jenita123');
+
+=> memasukkan ke tabel categories
+	- insert into categories values ('','gadget'),
+		->('','cloth'),
+		->('','men'),
+		->('','women'),
+		->('','branded');
+
+=> memasukkan ke tabel items
+	- insert into items values ('','Sumsang b50','hape keren dari merek sumsang','4000000','100','1'),
+		->('','Uniklooh','baju keren dari brand ternama','500000','50','2'),
+		->('','IMHO Watch','jam tangan anak yang jujur banget','2000000','10','1');
+
+4. mengambil data dari databse
+ a. mengambil data users
+ 	=> select id, name, email from users;
+
+ b. mengambil data items
+ 	=> diatas 1jt
+ 		-> select * from items where price > 1000000;
+
+ 	=>memiliki nama serupa
+ 		->select * from items where name like '%sang%';
+
+ 	=>
+
+5. mengubah data dari database
+	=> update item set price ='2500000' where name = 'Sumsang b50';
