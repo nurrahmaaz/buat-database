@@ -55,7 +55,8 @@
  	=>memiliki nama serupa
  		->select * from items where name like '%sang%';
 
- 	=>
+ 	=>menampilkan dua tabe;
+ 		-> select items.id,name, description, price, stock, category_id, categories.name as kategori from items inner join categories on items.category_id=categories.id;
 
 5. mengubah data dari database
 	=> update item set price ='2500000' where name = 'Sumsang b50';
